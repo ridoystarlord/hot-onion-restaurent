@@ -1,0 +1,10 @@
+.banner-background{
+    background-image: url("../../../images/bannerbackground.png");
+    height: 535px;
+    background-size: cover;
+    background-position: center;
+    margin-left: -30px;
+}
+.hero-title{
+    padding-top: 100px;
+}
