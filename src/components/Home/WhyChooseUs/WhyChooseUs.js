@@ -11,7 +11,7 @@ import homedelivery from "../../../images/ICON/Group 245.png";
 
 const WhyChooseUs = () => {
   return (
-    <Container>
+    <Container className="mb-5">
       <h2 className="pb-3">Why You Choose Us?</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores

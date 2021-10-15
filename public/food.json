@@ -1,0 +1,146 @@
+[
+    {
+        "key": 1,
+        "name": "Breakfast 1",
+        "price": 23.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137360002-25b118b4-067a-4eb5-967c-e56e891030d9.png"
+    },
+    {
+        
+        "key": 2,
+        "name": "Breakfast 2",
+        "price": 9.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137360831-844ca61d-6e1a-4d55-8fa7-4748b9ddb61b.png"
+    },
+    {
+        "key": 3,
+        "name": "Breakfast 3",
+        "price": 6.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137360992-323ec6ca-ecd8-4f5f-bcf1-222830d0b2f5.png"
+    },
+    {
+        "key": 4,
+        "name": "Breakfast 4",
+        "price": 8.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137361091-a769268e-9492-49f6-92ea-991f84541ddb.png"
+    },
+    {
+        "key": 5,
+        "name": "Breakfast 5",
+        "price": 15.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137361159-8065683b-b433-459c-8091-27d7b4c95df5.png"
+    },
+    {"key": 6,
+        "name": "Breakfast 6",
+        "price": 7.99,
+        "description": "How we dream our future",
+        "category": "Breakfast",
+        "img": "https://user-images.githubusercontent.com/77241744/137361223-ae7b63f5-7015-4f3f-99e5-f76b96b44d79.png"
+    }, {
+        "key": 7,
+        "name": "Lunch 1",
+        "price": 23.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362787-d883ba75-fbdd-4664-ac15-724b704b486b.png"
+    },
+    {
+        
+        "key": 8,
+        "name": "Lunch 2",
+        "price": 9.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362797-97cb70a7-656e-466b-bfea-271e5e2795a4.png"
+    },
+    {
+        "key": 9,
+        "name": "Lunch 3",
+        "price": 6.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362802-6ac85d09-03a2-4b57-87e8-f537de3363e9.png"
+    },
+    {
+        "key": 10,
+        "name": "Lunch 4",
+        "price": 8.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362813-818afb25-1660-4921-8901-8957c1ec3051.png"
+    },
+    {
+        "key": 11,
+        "name": "Lunch 5",
+        "price": 15.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362818-68143825-4d80-4a66-8bb8-560979a92617.png"
+    },
+    {"key": 12,
+        "name": "Lunch 6",
+        "price": 7.99,
+        "description": "How we dream our future",
+        "category": "Lunch",
+        "img": "https://user-images.githubusercontent.com/77241744/137362825-4ae0e32c-c474-492a-8470-94c00ab0f6c5.png"
+    },
+    {
+        "key": 13,
+        "name": "Dinner 1",
+        "price": 23.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363109-2a702b3b-813b-4664-8b64-5dfcfd1a146b.png"
+    },
+    {
+        
+        "key": 14,
+        "name": "Dinner 2",
+        "price": 9.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363110-b6efbc80-4d83-4e20-b006-b1ca93b409b4.png"
+    },
+    {
+        "key": 15,
+        "name": "Dinner 3",
+        "price": 6.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363115-24a9685f-04f6-4f0b-b76b-4801a00dd977.png"
+    },
+    {
+        "key": 16,
+        "name": "Dinner 4",
+        "price": 8.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363098-305def83-c23b-4c45-b53a-608e08433700.png"
+    },
+    {
+        "key": 17,
+        "name": "Dinner 5",
+        "price": 15.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363107-f0003862-3e80-478d-8d3c-b8489d2c78bd.png"
+    },
+    {   "key": 18,
+        "name": "Dinner 6",
+        "price": 7.99,
+        "description": "How we dream our future",
+        "category": "Dinner",
+        "img": "https://user-images.githubusercontent.com/77241744/137363108-81e3b6b8-5502-49a8-a23e-d98e5d1c4a6d.png"
+    }
+    
+]

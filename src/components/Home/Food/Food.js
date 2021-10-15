@@ -1,8 +1,9 @@
 import React from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Food = (props) => {
-  const { name, price, description, img } = props.food;
+  const { key, name, price, description, img } = props.food;
   return (
     <div>
       <Col className="h-100 shadow-sm">
@@ -14,7 +15,9 @@ const Food = (props) => {
             <h3 className="text-dark fw-bold">$ {price}</h3>
           </Card.Body>
           <Card.Footer className="text-center">
-            <Button variant="danger">Add to cart</Button>
+            <Link to={`/food/${key}`}>
+              <Button variant="danger">Buy Now</Button>
+            </Link>
           </Card.Footer>
         </Card>
       </Col>

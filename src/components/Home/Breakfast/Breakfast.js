@@ -6,9 +6,11 @@ import "./Breakfast.css";
 const Breakfast = () => {
   const [breakfast, setBreakfast] = useState([]);
   useEffect(() => {
-    fetch("breakfast.json")
+    fetch("food.json")
       .then((res) => res.json())
-      .then((data) => setBreakfast(data));
+      .then((data) =>
+        setBreakfast(data.filter((food) => food.category === "Breakfast"))
+      );
   }, []);
   return (
     <div>

@@ -1,10 +1,10 @@
 import React from "react";
-import { Col, Container, Row, Card } from "react-bootstrap";
-import "./Login.css";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import "./Signup.css";
 import { useForm } from "react-hook-form";
 import logo from "../../../../images/logo2.png";
 
-const Login = () => {
+const Signup = () => {
   const {
     register,
     handleSubmit,
@@ -12,6 +12,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
   console.log(watch("example"));
   return (
     <Container className="py-5">
@@ -22,6 +23,14 @@ const Login = () => {
             <Card.Img className="img-fluid p-5" variant="top" src={logo} />
             <Card.Body>
               <form onSubmit={handleSubmit(onSubmit)}>
+                <p>
+                  <input
+                    className="w-100 p-2"
+                    placeholder="Name"
+                    {...register("name", { required: true })}
+                  />
+                  {errors.name && <span>Name is required</span>}
+                </p>
                 <p>
                   <input
                     className="w-100 p-2"
@@ -42,11 +51,13 @@ const Login = () => {
                   <input
                     className="bg-danger rounded border-0 text-white p-2 w-100"
                     type="submit"
-                    value="Login"
+                    value="Sign Up"
                   />
                 </p>
               </form>
-              <p className="text-center text-danger">Create an account?</p>
+              <p className="text-center text-danger">
+                Already have an account?
+              </p>
             </Card.Body>
           </Card>
         </Col>
@@ -56,4 +67,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

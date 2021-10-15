@@ -5,13 +5,15 @@ import "./Dinner.css";
 const Dinner = () => {
   const [dinner, setDinner] = useState([]);
   useEffect(() => {
-    fetch("dinner.json")
+    fetch("food.json")
       .then((res) => res.json())
-      .then((data) => setDinner(data));
+      .then((data) =>
+        setDinner(data.filter((food) => food.category === "Dinner"))
+      );
   }, []);
   return (
     <div>
-      <Row xs={1} md={4} className="g-4">
+      <Row xs={1} md={3} className="g-4">
         {dinner.map((food) => (
           <Food key={food.key} food={food}></Food>
         ))}
