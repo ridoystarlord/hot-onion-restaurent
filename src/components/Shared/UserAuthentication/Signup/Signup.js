@@ -3,17 +3,18 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import "./Signup.css";
 import { useForm } from "react-hook-form";
 import logo from "../../../../images/logo2.png";
+import useAuth from "../../../../hooks/useAuth";
 
 const Signup = () => {
+  const { resgisterEmailPasswordAuth } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) =>
+    resgisterEmailPasswordAuth(data.name, data.email, data.password);
 
-  console.log(watch("example"));
   return (
     <Container className="py-5">
       <Row>
@@ -29,7 +30,9 @@ const Signup = () => {
                     placeholder="Name"
                     {...register("name", { required: true })}
                   />
-                  {errors.name && <span>Name is required</span>}
+                  {errors.name && (
+                    <span className="text-danger">Name is required</span>
+                  )}
                 </p>
                 <p>
                   <input
@@ -37,7 +40,9 @@ const Signup = () => {
                     placeholder="Email"
                     {...register("email", { required: true })}
                   />
-                  {errors.email && <span>Email is required</span>}
+                  {errors.email && (
+                    <span className="text-danger">Email is required</span>
+                  )}
                 </p>
                 <p>
                   <input
@@ -45,7 +50,9 @@ const Signup = () => {
                     className="w-100 p-2"
                     {...register("password", { required: true })}
                   />
-                  {errors.exampleRequired && <span>Password is required</span>}
+                  {errors.password && (
+                    <span className="text-danger">Password is required</span>
+                  )}
                 </p>
                 <p className="text-center">
                   <input

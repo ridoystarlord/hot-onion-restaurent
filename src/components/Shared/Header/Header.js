@@ -1,10 +1,12 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logo from "../../../images/logo2.png";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+  const { user, logout } = useAuth();
   return (
     <>
       <Navbar bg="light" variant="light">
@@ -18,20 +20,29 @@ const Header = () => {
             />
           </Navbar.Brand>
           <Nav className="ms-auto">
-            <Nav.Link
-              as={NavLink}
-              to="/login"
-              className="fw-bold text-dark me-3"
-            >
-              Login
-            </Nav.Link>
-            <Nav.Link
-              as={NavLink}
-              to="/signup"
-              className="bg-danger rounded-pill text-white px-4"
-            >
-              Sign up
-            </Nav.Link>
+            {user.email
+              ? [
+                  <p className="me-3">{user.name}</p>,
+                  <Button onClick={logout} variant="danger">
+                    Logout
+                  </Button>,
+                ]
+              : [
+                  <Nav.Link
+                    as={NavLink}
+                    to="/login"
+                    className="fw-bold text-dark me-3"
+                  >
+                    Login
+                  </Nav.Link>,
+                  <Nav.Link
+                    as={NavLink}
+                    to="/signup"
+                    className="bg-danger rounded-pill text-white px-4"
+                  >
+                    Sign up
+                  </Nav.Link>,
+                ]}
           </Nav>
         </Container>
       </Navbar>

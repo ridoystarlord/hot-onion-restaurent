@@ -3,16 +3,16 @@ import { Col, Container, Row, Card } from "react-bootstrap";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import logo from "../../../../images/logo2.png";
+import useAuth from "../../../../hooks/useAuth";
 
 const Login = () => {
+  const { loginEmailPasswordAuth } = useAuth();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(watch("example"));
+  const onSubmit = (data) => loginEmailPasswordAuth(data.email, data.password);
   return (
     <Container className="py-5">
       <Row>
@@ -28,7 +28,9 @@ const Login = () => {
                     placeholder="Email"
                     {...register("email", { required: true })}
                   />
-                  {errors.email && <span>Email is required</span>}
+                  {errors.email && (
+                    <span className="text-danger">Email is required</span>
+                  )}
                 </p>
                 <p>
                   <input
@@ -36,7 +38,9 @@ const Login = () => {
                     className="w-100 p-2"
                     {...register("password", { required: true })}
                   />
-                  {errors.exampleRequired && <span>Password is required</span>}
+                  {errors.password && (
+                    <span className="text-danger">Password is required</span>
+                  )}
                 </p>
                 <p className="text-center">
                   <input

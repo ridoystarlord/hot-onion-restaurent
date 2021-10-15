@@ -7,33 +7,36 @@ import NotFound from "./components/Shared/NotFound/NotFound";
 import Signup from "./components/Shared/UserAuthentication/Signup/Signup";
 import Login from "./components/Shared/UserAuthentication/Login/Login";
 import FoodDetails from "./components/Shared/FoodDetails/FoodDetails";
+import AuthProvider from "./context/AuthProvider";
 function App() {
   return (
     <div>
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route path="/signup">
-            <Signup></Signup>
-          </Route>
-          <Route path="/food/:id">
-            <FoodDetails></FoodDetails>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route path="/signup">
+              <Signup></Signup>
+            </Route>
+            <Route path="/food/:id">
+              <FoodDetails></FoodDetails>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
