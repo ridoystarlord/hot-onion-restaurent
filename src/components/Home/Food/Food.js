@@ -14,7 +14,7 @@ const Food = (props) => {
             <h3 className="text-dark fw-bold">$ {price}</h3>
           </Card.Body>
           <Card.Footer className="text-center">
-            <Button variant="danger">Buy Now</Button>
+            <Button variant="danger">Add to cart</Button>
           </Card.Footer>
         </Card>
       </Col>
