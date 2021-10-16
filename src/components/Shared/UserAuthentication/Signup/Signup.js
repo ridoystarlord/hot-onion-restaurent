@@ -4,16 +4,30 @@ import "./Signup.css";
 import { useForm } from "react-hook-form";
 import logo from "../../../../images/logo2.png";
 import useAuth from "../../../../hooks/useAuth";
+import { useHistory, useLocation } from "react-router";
 
 const Signup = () => {
-  const { resgisterEmailPasswordAuth } = useAuth();
+  const history = useHistory();
+  const location = useLocation();
+  const url = location.state?.from || "/";
+  const { resgisterEmailPasswordAuth, setUser, writeDatabase } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) =>
-    resgisterEmailPasswordAuth(data.name, data.email, data.password);
+    resgisterEmailPasswordAuth(data.email, data.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        writeDatabase(data.name, data.email, data.password, user.uid);
+        setUser(user);
+        history.push(url);
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
 
   return (
     <Container className="py-5">

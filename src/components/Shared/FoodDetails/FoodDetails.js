@@ -34,6 +34,7 @@ const FoodDetails = () => {
     document.getElementById("foodPrice").innerText = count * price;
     console.log(count);
   };
+
   return (
     <Container className="py-5">
       <Row>
@@ -69,7 +70,7 @@ const FoodDetails = () => {
                       </Button>
                     </div>
                   </div>
-                  <Link to="/">
+                  <Link to="/viewcart">
                     <Button className="rounded-pill px-5 mt-5" variant="danger">
                       Add to Cart
                     </Button>

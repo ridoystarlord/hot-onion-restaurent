@@ -8,6 +8,8 @@ import Signup from "./components/Shared/UserAuthentication/Signup/Signup";
 import Login from "./components/Shared/UserAuthentication/Login/Login";
 import FoodDetails from "./components/Shared/FoodDetails/FoodDetails";
 import AuthProvider from "./context/AuthProvider";
+import Vieworder from "./components/Shared/Vieworder/Vieworder";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 function App() {
   return (
     <div>
@@ -30,6 +32,9 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/viewcart">
+              <Vieworder></Vieworder>
+            </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>

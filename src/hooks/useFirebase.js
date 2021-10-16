@@ -14,35 +14,16 @@ const auth = getAuth();
 const database = getDatabase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
-  const resgisterEmailPasswordAuth = (name, email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        setUser(user);
-        writeDatabase(name, email, password, user.uid);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+  const resgisterEmailPasswordAuth = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
   };
   const loginEmailPasswordAuth = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        setUser(user);
-        readDatabase(user.uid);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
+    return signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // setUser(user);
-        readDatabase(user.uid);
+        readDatabase(user, user.uid);
       } else {
         setUser({});
       }
@@ -67,16 +48,23 @@ const useFirebase = () => {
     });
   };
 
-  const readDatabase = (uid) => {
+  const readDatabase = (user, uid) => {
     const userdata = ref(database, "users/" + uid);
     onValue(userdata, (snapshot) => {
       const data = snapshot.val();
-      //user.name = data.name;
-      setUser(data);
+      user.displayName = data.name;
+      setUser(user);
     });
   };
 
-  return { user, resgisterEmailPasswordAuth, logout, loginEmailPasswordAuth };
+  return {
+    user,
+    setUser,
+    resgisterEmailPasswordAuth,
+    logout,
+    loginEmailPasswordAuth,
+    writeDatabase,
+  };
 };
 
 export default useFirebase;
